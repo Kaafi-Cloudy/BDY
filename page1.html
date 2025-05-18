@@ -1,53 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Happy Birthday!</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      height: 100vh;
       background: linear-gradient(to top, #444 0%, #000 20%);
+      height: 100vh;
       overflow: hidden;
+      font-family: Arial, sans-serif;
       color: white;
-      font-family: 'Arial', sans-serif;
-      position: relative;
-    }
-
-    .balloon, .confetti {
-      position: absolute;
-      bottom: -100px;
-      animation: floatUp 6s linear infinite;
-      opacity: 0.8;
-    }
-
-    .balloon {
-      width: 30px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: red;
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-120vh); }
-    }
-
-    .reflect {
-      -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255, 255, 255, 0.1));
     }
 
     .title {
-      font-size: 48px;
-      margin-top: 100px;
       text-align: center;
+      font-size: 48px;
+      margin-top: 80px;
       animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255,255,255,0.1));
     }
 
     .title span {
@@ -55,12 +27,33 @@
       animation: bounce 3s infinite;
     }
 
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .witch {
+      position: absolute;
+      width: 80px;
+      top: 20px;
+    }
+
+    .witch.left {
+      left: 10px;
+    }
+
+    .witch.right {
+      right: 10px;
+      transform: scaleX(-1);
+    }
+
     .door-section {
       position: absolute;
       bottom: 20px;
       width: 100%;
       text-align: center;
-      font-size: 20px;
+      font-size: 18px;
+      -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255,255,255,0.1));
     }
 
     .door {
@@ -74,14 +67,112 @@
     }
 
     .door:hover {
-      background-color: #8d6e4b;
+      background: #8d6e4b;
     }
 
-    .witch {
+    .sparkles {
       position: absolute;
-      width: 80px;
-      top: 10px;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      background: radial-gradient(circle, gold 1px, transparent 1px);
+      background-size: 10px 10px;
+      pointer-events: none;
     }
 
-    .witch.left {
-      left: 10px
+    .balloon, .confetti {
+      position: absolute;
+      bottom: -50px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    .balloon {
+      width: 30px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .confetti {
+      width: 8px;
+      height: 8px;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-120vh); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Witch Images (use your own links if needed) -->
+  <img src="https://i.imgur.com/mwWxj4T.png" class="witch left" alt="Witch Left">
+  <img src="https://i.imgur.com/mwWxj4T.png" class="witch right" alt="Witch Right">
+
+  <!-- Title -->
+  <div class="title">
+    <span style="color:red;">H</span>
+    <span style="color:yellow;">a</span>
+    <span style="color:green;">p</span>
+    <span style="color:blue;">p</span>
+    <span style="color:red;">y</span>
+    <span style="color:yellow;"> </span>
+    <span style="color:green;">B</span>
+    <span style="color:blue;">i</span>
+    <span style="color:red;">r</span>
+    <span style="color:yellow;">t</span>
+    <span style="color:green;">h</span>
+    <span style="color:blue;">d</span>
+    <span style="color:red;">a</span>
+    <span style="color:yellow;">y</span>
+    <span style="color:green;"> </span>
+    <span style="color:blue;">S</span>
+    <span style="color:red;">w</span>
+    <span style="color:yellow;">e</span>
+    <span style="color:green;">e</span>
+    <span style="color:blue;">t</span>
+    <span style="color:red;">h</span>
+    <span style="color:yellow;">e</span>
+    <span style="color:green;">a</span>
+    <span style="color:blue;">r</span>
+    <span style="color:red;">t</span>
+    <span style="color:yellow;"> </span>
+    <span style="color:green;">😘</span>
+  </div>
+
+  <!-- Bottom door -->
+  <div class="door-section">
+    Knock to open the door to your Witchcraft World
+    <a href="page3.html">
+      <div class="door"></div>
+    </a>
+  </div>
+
+  <!-- Gold sparkles -->
+  <div class="sparkles"></div>
+
+  <!-- JS for balloons and confetti -->
+  <script>
+    const colors = ['red', 'yellow', 'green', 'blue', 'purple'];
+    for (let i = 0; i < 20; i++) {
+      const b = document.createElement('div');
+      b.className = 'balloon';
+      b.style.left = `${Math.random() * 100}%`;
+      b.style.backgroundColor = colors[i % colors.length];
+      b.style.animationDelay = `${Math.random() * 6}s`;
+      document.body.appendChild(b);
+    }
+
+    for (let i = 0; i < 30; i++) {
+      const c = document.createElement('div');
+      c.className = 'confetti';
+      c.style.left = `${Math.random() * 100}%`;
+      c.style.backgroundColor = colors[i % colors.length];
+      c.style.animationDelay = `${Math.random() * 6}s`;
+      document.body.appendChild(c);
+    }
+  </script>
+
+</body>
+</html>
