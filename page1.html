@@ -4,33 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       background: linear-gradient(to top, #444 0%, #000 20%);
       height: 100vh;
       overflow: hidden;
-      font-family: Arial, sans-serif;
-      color: white;
+      font-family: 'Pacifico', cursive;
+      color: #00cfff;
     }
 
-    .title {
+    .typing-container {
       text-align: center;
-      font-size: 3.6em; /* Reduced 40% from 6em */
       margin-top: 40px;
-      line-height: 1.1;
-      animation: bounce 3s infinite;
+      font-size: 3.6em;
       -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255,255,255,0.1));
     }
 
-    .title span {
+    .type-line {
       display: block;
-      animation: bounce 4s infinite;
+      height: 1.2em;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00cfff;
+      width: 0;
+      margin: auto;
+      animation: typing 2s steps(20, end) forwards, blink 0.7s step-end infinite;
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    .line2 { animation-delay: 2.3s; }
+    .line3 { animation-delay: 4.6s; }
+    .line4 { animation-delay: 6.9s; }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
     }
 
     .witch {
@@ -53,7 +66,7 @@
       bottom: 20px;
       width: 100%;
       text-align: center;
-      font-size: 1.8em; /* Reduced from 3em */
+      font-size: 1.8em;
       background: rgba(255, 255, 255, 0.1);
       padding: 10px;
       -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255,255,255,0.1));
@@ -116,16 +129,16 @@
 </head>
 <body>
 
-  <!-- Working Witch Images -->
+  <!-- Witch Images -->
   <img src="https://i.imgur.com/RwDjYqZ.png" class="witch left" alt="Witch Left">
   <img src="https://i.imgur.com/RwDjYqZ.png" class="witch right" alt="Witch Right">
 
-  <!-- Main Title -->
-  <div class="title">
-    <span style="color:red;">HAPPY</span>
-    <span style="color:yellow;">BIRTHDAY</span>
-    <span style="color:lightgreen;">SWEETIEE</span>
-    <span style="color:pink;">😘😘😘</span>
+  <!-- Typing Birthday Text -->
+  <div class="typing-container">
+    <span class="type-line line1">HAPPY</span>
+    <span class="type-line line2">BIRTHDAY</span>
+    <span class="type-line line3">SWEETIEE</span>
+    <span class="type-line line4">😘😘😘</span>
   </div>
 
   <!-- Door Section -->
