@@ -21,16 +21,20 @@ body {
   max-width: 1200px;
   padding: 40px;
   transform: scale(1.5); /* Roughly 7x effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
   background-color: #4a5a66;
   color: white;
-  font-size: 80px;       /* was 60px */
+  font-size: 100px;       /* was 80px */
   font-weight: bold;
-  width: 240px;          /* was 160px */
-  height: 240px;         /* was 160px */
-  line-height: 240px;
+  width: 300px;           /* was 240px */
+  height: 300px;
+  line-height: 300px;
   border-radius: 50%;
   margin: 0 auto 40px;
 }
@@ -42,9 +46,16 @@ h1 {
 }
 
 p {
-  color: #444;
   font-size: 24px;
   margin-bottom: 30px;
+}
+
+p:nth-of-type(2) {
+  background-color: rgba(240, 240, 240, 0.8); /* faint grey */
+  color: #111;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 .form {
