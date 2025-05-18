@@ -1,7 +1,4 @@
 body {
-  border: 10px solid red;
-}
-body {
   margin: 0;
   height: 100vh;
   font-family: Arial, sans-serif;
@@ -23,30 +20,30 @@ body {
   width: 100%;
   max-width: 1200px;
   padding: 40px;
-  transform: scale(2.5); /* Approximately 12x font and element scaling */
+  transform: scale(1.5); /* Roughly 7x effect */
 }
 
 .logo {
   background-color: #4a5a66;
   color: white;
-  font-size: 60px;
+  font-size: 80px;       /* was 60px */
   font-weight: bold;
-  width: 160px;
-  height: 160px;
-  line-height: 160px;
+  width: 240px;          /* was 160px */
+  height: 240px;         /* was 160px */
+  line-height: 240px;
   border-radius: 50%;
   margin: 0 auto 40px;
 }
 
 h1 {
   color: #222;
-  font-size: 48px;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
 p {
   color: #444;
-  font-size: 32px;
+  font-size: 24px;
   margin-bottom: 30px;
 }
 
@@ -59,17 +56,17 @@ label {
   display: block;
   margin-top: 20px;
   color: #111;
-  font-size: 30px;
+  font-size: 22px;
   background-color: rgba(255, 255, 255, 0.5); /* faint white background */
   padding: 5px 10px;
   border-radius: 5px;
 }
 
 input {
-  width: 400px;
-  padding: 15px;
+  width: 350px;
+  padding: 12px;
   margin-top: 10px;
-  font-size: 26px;
+  font-size: 20px;
   border: 1px solid #aaa;
   border-radius: 5px;
   background-color: white;
@@ -80,13 +77,13 @@ button {
   display: block;
   width: 100%;
   margin-top: 40px;
-  padding: 20px;
+  padding: 15px;
   background-color: #2d3e50;
   color: white;
   border: none;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 22px;
   cursor: pointer;
 }
 
@@ -97,5 +94,5 @@ button:hover {
 .error {
   color: red;
   margin-top: 30px;
-  font-size: 28px;
+  font-size: 22px;
 }
