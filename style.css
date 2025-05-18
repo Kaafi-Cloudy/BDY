@@ -1,8 +1,7 @@
 body {
   margin: 0;
-  height: 100vh;
   font-family: Arial, sans-serif;
-  background-color: #d3dce3; /* bluish light grey */
+  background-color: #d3dce3;
   background-image: repeating-linear-gradient(
     to right,
     transparent,
@@ -10,21 +9,19 @@ body {
     black 9px,
     black 10px
   );
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
   max-width: 1200px;
-  padding: 40px;
-  transform: scale(1.5); /* ~7x scaling */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 20px;
 }
 
 .logo {
@@ -32,7 +29,7 @@ body {
   color: white;
   font-size: 100px;
   font-weight: bold;
-  width: 360px;           /* Increased to fit "Reemt" */
+  width: 360px;
   height: 300px;
   line-height: 300px;
   border-radius: 50%;
@@ -48,7 +45,7 @@ h1 {
 }
 
 .highlight-msg {
-  background-color: rgba(240, 240, 240, 0.8); /* faint grey background */
+  background-color: rgba(240, 240, 240, 0.8);
   color: #111;
   font-weight: bold;
   font-size: 24px;
@@ -68,7 +65,7 @@ label {
   margin-top: 20px;
   color: #111;
   font-size: 22px;
-  background-color: rgba(255, 255, 255, 0.5); /* faint white background */
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 5px 10px;
   border-radius: 5px;
 }
