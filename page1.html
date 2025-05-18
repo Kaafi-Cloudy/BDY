@@ -16,7 +16,7 @@
 
     .title {
       text-align: center;
-      font-size: 6em;
+      font-size: 3.6em; /* Reduced 40% from 6em */
       margin-top: 40px;
       line-height: 1.1;
       animation: bounce 3s infinite;
@@ -35,16 +35,16 @@
 
     .witch {
       position: absolute;
-      width: 100px;
-      top: 20px;
+      width: 60px;
+      top: 10px;
     }
 
     .witch.left {
-      left: 10px;
+      left: 5px;
     }
 
     .witch.right {
-      right: 10px;
+      right: 5px;
       transform: scaleX(-1);
     }
 
@@ -53,7 +53,7 @@
       bottom: 20px;
       width: 100%;
       text-align: center;
-      font-size: 3em;
+      font-size: 1.8em; /* Reduced from 3em */
       background: rgba(255, 255, 255, 0.1);
       padding: 10px;
       -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255,255,255,0.1));
@@ -61,16 +61,18 @@
 
     .door {
       display: inline-block;
-      width: 60px;
-      height: 90px;
-      background: #6b4e2e;
-      border: 3px solid #fff;
-      margin-left: 20px;
+      width: 40px;
+      height: 65px;
+      margin-left: 15px;
       cursor: pointer;
+      border: 2px solid #fff;
+      background: linear-gradient(to right, #6b4e2e, #8d6e4b);
+      box-shadow: inset -2px -2px 5px rgba(0,0,0,0.3), inset 2px 2px 5px rgba(255,255,255,0.2), 2px 4px 8px rgba(0,0,0,0.5);
+      border-radius: 3px;
     }
 
     .door:hover {
-      background: #8d6e4b;
+      background: linear-gradient(to right, #8d6e4b, #a27f5a);
     }
 
     .sparkles {
@@ -96,14 +98,14 @@
     }
 
     .balloon {
-      width: 30px;
-      height: 40px;
+      width: 20px;
+      height: 30px;
       border-radius: 50%;
     }
 
     .confetti {
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
     }
 
     @keyframes floatUp {
@@ -137,11 +139,10 @@
   <!-- Sparkles -->
   <div class="sparkles" id="sparkleContainer"></div>
 
-  <!-- Balloons and Confetti Script -->
+  <!-- Balloons, Confetti, Sparkles Script -->
   <script>
     const colors = ['red', 'yellow', 'green', 'blue', 'purple'];
 
-    // Balloons
     for (let i = 0; i < 20; i++) {
       const b = document.createElement('div');
       b.className = 'balloon';
@@ -151,7 +152,6 @@
       document.body.appendChild(b);
     }
 
-    // Confetti
     for (let i = 0; i < 30; i++) {
       const c = document.createElement('div');
       c.className = 'confetti';
@@ -161,14 +161,13 @@
       document.body.appendChild(c);
     }
 
-    // Sparkles
     const sparkleContainer = document.getElementById("sparkleContainer");
     for (let i = 0; i < 40; i++) {
       const s = document.createElement("div");
       s.className = "sparkle";
       s.style.left = `${Math.random() * 100}%`;
       s.style.bottom = `${Math.random() * 20}px`;
-      const size = 3 + Math.random() * 8;
+      const size = 2 + Math.random() * 8;
       s.style.width = `${size}px`;
       s.style.height = `${size}px`;
       sparkleContainer.appendChild(s);
