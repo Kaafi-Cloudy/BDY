@@ -16,15 +16,16 @@
 
     .title {
       text-align: center;
-      font-size: 48px;
-      margin-top: 80px;
-      animation: bounce 2s infinite;
+      font-size: 6em;
+      margin-top: 40px;
+      line-height: 1.1;
+      animation: bounce 3s infinite;
       -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255,255,255,0.1));
     }
 
     .title span {
-      display: inline-block;
-      animation: bounce 3s infinite;
+      display: block;
+      animation: bounce 4s infinite;
     }
 
     @keyframes bounce {
@@ -34,7 +35,7 @@
 
     .witch {
       position: absolute;
-      width: 80px;
+      width: 100px;
       top: 20px;
     }
 
@@ -52,17 +53,19 @@
       bottom: 20px;
       width: 100%;
       text-align: center;
-      font-size: 18px;
+      font-size: 3em;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
       -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255,255,255,0.1));
     }
 
     .door {
       display: inline-block;
-      width: 40px;
-      height: 60px;
+      width: 60px;
+      height: 90px;
       background: #6b4e2e;
-      border: 2px solid #fff;
-      margin-left: 10px;
+      border: 3px solid #fff;
+      margin-left: 20px;
       cursor: pointer;
     }
 
@@ -74,10 +77,15 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 60px;
-      background: radial-gradient(circle, gold 1px, transparent 1px);
-      background-size: 10px 10px;
+      height: 80px;
       pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      background: gold;
+      border-radius: 50%;
+      opacity: 0.8;
     }
 
     .balloon, .confetti {
@@ -106,42 +114,19 @@
 </head>
 <body>
 
-  <!-- Witch Images (use your own links if needed) -->
-  <img src="https://i.imgur.com/mwWxj4T.png" class="witch left" alt="Witch Left">
-  <img src="https://i.imgur.com/mwWxj4T.png" class="witch right" alt="Witch Right">
+  <!-- Working Witch Images -->
+  <img src="https://i.imgur.com/RwDjYqZ.png" class="witch left" alt="Witch Left">
+  <img src="https://i.imgur.com/RwDjYqZ.png" class="witch right" alt="Witch Right">
 
-  <!-- Title -->
+  <!-- Main Title -->
   <div class="title">
-    <span style="color:red;">H</span>
-    <span style="color:yellow;">a</span>
-    <span style="color:green;">p</span>
-    <span style="color:blue;">p</span>
-    <span style="color:red;">y</span>
-    <span style="color:yellow;"> </span>
-    <span style="color:green;">B</span>
-    <span style="color:blue;">i</span>
-    <span style="color:red;">r</span>
-    <span style="color:yellow;">t</span>
-    <span style="color:green;">h</span>
-    <span style="color:blue;">d</span>
-    <span style="color:red;">a</span>
-    <span style="color:yellow;">y</span>
-    <span style="color:green;"> </span>
-    <span style="color:blue;">S</span>
-    <span style="color:red;">w</span>
-    <span style="color:yellow;">e</span>
-    <span style="color:green;">e</span>
-    <span style="color:blue;">t</span>
-    <span style="color:red;">h</span>
-    <span style="color:yellow;">e</span>
-    <span style="color:green;">a</span>
-    <span style="color:blue;">r</span>
-    <span style="color:red;">t</span>
-    <span style="color:yellow;"> </span>
-    <span style="color:green;">😘</span>
+    <span style="color:red;">HAPPY</span>
+    <span style="color:yellow;">BIRTHDAY</span>
+    <span style="color:lightgreen;">SWEETIEE</span>
+    <span style="color:pink;">😘😘😘</span>
   </div>
 
-  <!-- Bottom door -->
+  <!-- Door Section -->
   <div class="door-section">
     Knock to open the door to your Witchcraft World
     <a href="page3.html">
@@ -149,12 +134,14 @@
     </a>
   </div>
 
-  <!-- Gold sparkles -->
-  <div class="sparkles"></div>
+  <!-- Sparkles -->
+  <div class="sparkles" id="sparkleContainer"></div>
 
-  <!-- JS for balloons and confetti -->
+  <!-- Balloons and Confetti Script -->
   <script>
     const colors = ['red', 'yellow', 'green', 'blue', 'purple'];
+
+    // Balloons
     for (let i = 0; i < 20; i++) {
       const b = document.createElement('div');
       b.className = 'balloon';
@@ -164,6 +151,7 @@
       document.body.appendChild(b);
     }
 
+    // Confetti
     for (let i = 0; i < 30; i++) {
       const c = document.createElement('div');
       c.className = 'confetti';
@@ -171,6 +159,19 @@
       c.style.backgroundColor = colors[i % colors.length];
       c.style.animationDelay = `${Math.random() * 6}s`;
       document.body.appendChild(c);
+    }
+
+    // Sparkles
+    const sparkleContainer = document.getElementById("sparkleContainer");
+    for (let i = 0; i < 40; i++) {
+      const s = document.createElement("div");
+      s.className = "sparkle";
+      s.style.left = `${Math.random() * 100}%`;
+      s.style.bottom = `${Math.random() * 20}px`;
+      const size = 3 + Math.random() * 8;
+      s.style.width = `${size}px`;
+      s.style.height = `${size}px`;
+      sparkleContainer.appendChild(s);
     }
   </script>
 
