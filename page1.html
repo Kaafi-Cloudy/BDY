@@ -1,37 +1,40 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday!</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+      height: 100%;
       font-family: 'Great Vibes', cursive;
       background: linear-gradient(to bottom, #00334e 80%, #000 100%);
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      overflow-x: hidden;
       color: #fff;
-    }.content {
+    }.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
   z-index: 2;
 }
 
 .typing-message {
   font-family: 'VT323', monospace;
   color: white;
-  font-size: 3.6em;
+  font-size: 1.8em;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 40px 0 20px;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid white;
   width: 0;
-  margin: 0 auto 20px auto;
   animation: typing 4s steps(40, end) forwards, blink 0.7s step-end infinite;
 }
 
@@ -46,10 +49,10 @@
 
 .birthday-lines span {
   display: block;
-  font-size: 7em;
+  font-size: 3em;
   font-weight: bold;
   text-shadow: 0 0 8px rgba(255,255,255,0.6);
-  margin: 8px 0;
+  margin: 10px 0;
 }
 
 .door {
@@ -74,9 +77,9 @@
 
 .witch-image {
   position: absolute;
-  right: 20px;
+  right: 10px;
   bottom: 10px;
-  width: 130px;
+  width: 100px;
   z-index: 1;
 }
 
@@ -110,7 +113,19 @@
 
   </style>
 </head>
-<body>  <!-- Witch Sticker -->  <img src="file-Yaz5iGGcKxYcpVMnrCPzFd" class="witch-image" alt="Cute Witch">  <!-- Background bulbs -->  <script>
+<body>
+  <img src="file-Yaz5iGGcKxYcpVMnrCPzFd" class="witch-image" alt="Cute Witch">  <div class="container">
+    <div class="birthday-lines">
+      <span>HAPPY</span>
+      <span>BIRTHDAY</span>
+      <span>SWEETIEE</span>
+      <span>😘</span>
+    </div>
+    <div class="typing-message">Knock and open the door to your Witchcraft World</div>
+    <a href="page3.html">
+      <div class="door"></div>
+    </a>
+  </div>  <script>
     for (let i = 0; i < 40; i++) {
       const bulb = document.createElement('div');
       bulb.className = 'bulb';
@@ -122,7 +137,7 @@
       bulb.style.animationDelay = `${Math.random() * 4}s`;
       document.body.appendChild(bulb);
     }
-  </script>  <!-- Balloons -->  <script>
+
     const balloonColors = ['red', 'yellow', 'blue', 'green', 'purple'];
     for (let i = 0; i < 20; i++) {
       const b = document.createElement('div');
@@ -132,16 +147,5 @@
       b.style.animationDelay = `${Math.random() * 9}s`;
       document.body.appendChild(b);
     }
-  </script>  <!-- Content -->  <div class="content">
-    <div class="typing-message">Knock and open the door to your Witchcraft World</div>
-    <div class="birthday-lines">
-      <span>HAPPY</span>
-      <span>BIRTHDAY</span>
-      <span>SWEETIEE</span>
-      <span>😘</span>
-    </div>
-    <a href="page3.html">
-      <div class="door"></div>
-    </a>
-  </div></body>
+  </script></body>
 </html>
