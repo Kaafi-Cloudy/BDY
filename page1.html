@@ -9,7 +9,7 @@
       margin: 0;
       height: 100vh;
       font-family: 'Great Vibes', cursive;
-      background: linear-gradient(to bottom, #1CA9C9 80%, #000 100%);
+      background: linear-gradient(to bottom, #00334e 80%, #000 100%);
       overflow: hidden;
       position: relative;
       display: flex;
@@ -24,7 +24,8 @@
 .typing-message {
   font-family: 'VT323', monospace;
   color: white;
-  font-size: 1.8em;
+  font-size: 3.6em;
+  font-weight: bold;
   margin-bottom: 10px;
   white-space: nowrap;
   overflow: hidden;
@@ -45,7 +46,8 @@
 
 .birthday-lines span {
   display: block;
-  font-size: 3.5em;
+  font-size: 7em;
+  font-weight: bold;
   text-shadow: 0 0 8px rgba(255,255,255,0.6);
   margin: 8px 0;
 }
@@ -112,7 +114,7 @@
     for (let i = 0; i < 40; i++) {
       const bulb = document.createElement('div');
       bulb.className = 'bulb';
-      const size = Math.random() * 8 + 4;
+      const size = (Math.random() * 8 + 4) * 2;
       bulb.style.width = `${size}px`;
       bulb.style.height = `${size}px`;
       bulb.style.left = `${Math.random() * 100}%`;
