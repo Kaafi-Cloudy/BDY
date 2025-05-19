@@ -2,42 +2,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&family=Brush+Script+MT&display=swap" rel="stylesheet">
+  <title>Happy Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Brush+Script+MT&family=VT323&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      background: linear-gradient(to top, #000033 0%, #000000 80%);
       overflow: hidden;
-      background: linear-gradient(to top, black 0%, #001f3f 30%);
       font-family: 'Brush Script MT', cursive;
-      color: #00cfff;
+      color: #ffffff;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
       position: relative;
-    }.typing-container {
+    }.birthday-text {
   text-align: center;
   font-size: 3em;
-  color: #00cfff;
-  text-shadow: 0 0 5px #00cfff;
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-.type-line {
+.birthday-text span {
   display: block;
-  height: 1.2em;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #00cfff;
-  width: 0;
-  margin: auto;
-  animation: typing 2s steps(20, end) forwards, blink 0.7s step-end infinite;
 }
 
-.line2 { animation-delay: 2.3s; }
-.line3 { animation-delay: 4.6s; }
-.line4 { animation-delay: 6.9s; }
+.knock-text {
+  font-family: 'VT323', monospace;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  white-space: pre-line;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-right: 2px solid white;
+  width: fit-content;
+  overflow: hidden;
+  animation: typing 4s steps(40, end) 1 forwards, blink 0.7s step-end infinite;
+}
 
 @keyframes typing {
   from { width: 0 }
@@ -45,52 +50,41 @@
 }
 
 @keyframes blink {
-  50% { border-color: transparent }
-}
-
-.door-message {
-  font-family: 'VT323', monospace;
-  color: white;
-  font-size: 1.5em;
-  margin-top: 30px;
-  white-space: pre-line;
-  animation: typing 3s steps(30, end) 1 forwards;
-  overflow: hidden;
-  border-right: 2px solid white;
-  width: 0;
-  animation-fill-mode: forwards;
-}
-
-.door-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
+  50% { border-color: transparent; }
 }
 
 .door {
   width: 80px;
   height: 130px;
-  cursor: pointer;
-  border: 2px solid #fff;
   background: linear-gradient(to right, #6b4e2e, #8d6e4b);
   box-shadow: inset -2px -2px 5px rgba(0,0,0,0.3), inset 2px 2px 5px rgba(255,255,255,0.2), 2px 4px 8px rgba(0,0,0,0.5);
+  border: 2px solid #fff;
   border-radius: 5px;
-  margin-top: 20px;
+  cursor: pointer;
+  margin-bottom: 60px;
 }
 
 .door:hover {
   background: linear-gradient(to right, #8d6e4b, #a27f5a);
 }
 
+.witch-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  max-width: 120px;
+  filter: drop-shadow(0 0 8px #000033);
+}
+
 .balloon {
   position: absolute;
-  bottom: -60px;
+  bottom: -50px;
+  border-radius: 50%;
   width: 20px;
   height: 30px;
-  border-radius: 50%;
-  opacity: 0.5;
+  opacity: 0.7;
   animation: floatUp 8s linear infinite;
 }
 
@@ -103,45 +97,34 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  background-color: yellow;
   border-radius: 50%;
-  box-shadow: 0 0 20px yellow;
-  opacity: 0.7;
-  animation: pulse 3s infinite ease-in-out;
+  background: yellow;
+  box-shadow: 0 0 15px yellow;
+  animation: glow 3s infinite alternate;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.2; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.3); }
-}
-
-.witch-image {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 400px;
-  height: auto;
-  filter: drop-shadow(0 0 30px #001f3f);
-  z-index: 10;
+@keyframes glow {
+  0% { opacity: 0.2; box-shadow: 0 0 5px yellow; }
+  100% { opacity: 1; box-shadow: 0 0 20px yellow; }
 }
 
   </style>
 </head>
-<body>  <div class="typing-container">
-    <span class="type-line line1">HAPPY</span>
-    <span class="type-line line2">BIRTHDAY</span>
-    <span class="type-line line3">SWEETIEE</span>
-    <span class="type-line line4">😘</span>
-  </div>  <div class="door-container">
-    <div class="door-message">Knock and open the door
-to your Witchcraft World</div>
-    <a href="page3.html">
-      <div class="door"></div>
-    </a>
-  </div>  <img src="reemt.png.jpg" class="witch-image" alt="Witch">  <script>
+<body>
+  <div class="birthday-text">
+    <span>HAPPY</span>
+    <span>BIRTHDAY</span>
+    <span>SWEETIEE</span>
+    <span>😘</span>
+  </div>  <div class="knock-text">
+    Knock and open the door to your
+    Witchcraft World
+  </div>  <a href="page3.html">
+    <div class="door"></div>
+  </a>  <img src="reemt.png.jpg" class="witch-image" alt="Witch">  <script>
     const colors = ['red', 'yellow', 'green', 'blue', 'purple'];
 
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 20; i++) {
       const b = document.createElement('div');
       b.className = 'balloon';
       b.style.left = `${Math.random() * 100}%`;
@@ -156,6 +139,8 @@ to your Witchcraft World</div>
       bulb.style.left = `${Math.random() * 100}%`;
       bulb.style.top = `${Math.random() * 100}%`;
       bulb.style.animationDelay = `${Math.random() * 4}s`;
+      bulb.style.width = `${8 + Math.random() * 12}px`;
+      bulb.style.height = bulb.style.width;
       document.body.appendChild(bulb);
     }
   </script></body>
