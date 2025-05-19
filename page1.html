@@ -3,23 +3,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Happy Birthday!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&family=Brush+Script+MT&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
+      background: linear-gradient(to top, #000033, #000);
       height: 100vh;
-      background: linear-gradient(to top, #000 0%, #000b3d 80%);
       overflow: hidden;
-      font-family: 'Brush Script MT', cursive;
+      font-family: 'Pacifico', cursive;
       color: #00cfff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
     }.typing-container {
   text-align: center;
-  font-size: 3.6em;
-  text-shadow: 0 0 8px #00cfff;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.8em;
+  font-family: 'Brush Script MT', cursive;
+  color: #00cfff;
+  text-shadow: 0 0 10px #00cfff;
   font-weight: bold;
 }
 
@@ -27,17 +29,17 @@
   display: block;
 }
 
-.typewriter {
-  font-family: 'VT323', monospace;
-  font-size: 1.6em;
-  color: white;
-  white-space: pre-wrap;
-  overflow: hidden;
-  border-right: .15em solid orange;
-  width: 0;
-  animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
-  margin: 20px auto 10px auto;
+.typewriter-message {
   text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 2em;
+  color: white;
+  margin-top: 80px;
+  white-space: pre-line;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 0;
+  animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -49,19 +51,24 @@
   50% { border-color: transparent }
 }
 
-.door {
-  width: 80px;
-  height: 130px;
-  cursor: pointer;
-  border: 4px solid #fff;
-  background: linear-gradient(to right, #6b4e2e, #a27f5a);
-  box-shadow: inset -4px -4px 10px rgba(0,0,0,0.3), inset 4px 4px 10px rgba(255,255,255,0.2), 4px 8px 16px rgba(0,0,0,0.5);
-  border-radius: 6px;
-  margin-top: 15px;
+.door-section {
+  text-align: center;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-a {
-  text-align: center;
+.door {
+  display: inline-block;
+  width: 80px;
+  height: 130px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  background: linear-gradient(to right, #6b4e2e, #8d6e4b);
+  box-shadow: inset -3px -3px 6px rgba(0,0,0,0.4), inset 3px 3px 6px rgba(255,255,255,0.2), 3px 5px 10px rgba(0,0,0,0.6);
+  border-radius: 5px;
 }
 
 .bulb {
@@ -69,20 +76,21 @@ a {
   border-radius: 50%;
   background: yellow;
   opacity: 0.8;
-  animation: flicker 3s infinite alternate;
+  animation: glow 2s infinite ease-in-out;
 }
 
-@keyframes flicker {
-  0% { opacity: 0.2; transform: scale(0.8); }
-  50% { opacity: 0.9; transform: scale(1.2); }
-  100% { opacity: 0.4; transform: scale(1); }
+@keyframes glow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.9; }
 }
 
 .balloon {
   position: absolute;
   bottom: -60px;
+  width: 25px;
+  height: 35px;
   border-radius: 50%;
-  opacity: 0.5;
+  opacity: 0.7;
   animation: floatUp 8s linear infinite;
 }
 
@@ -91,48 +99,54 @@ a {
   100% { transform: translateY(-120vh); }
 }
 
-.witch {
-  position: absolute;
-  bottom: 20px;
+.witch-image {
+  position: fixed;
+  bottom: 10px;
   right: 10px;
-  width: 80px;
+  width: 50px;
+  height: auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.7)) blur(2px);
+  z-index: 10;
+  pointer-events: none;
 }
 
   </style>
 </head>
 <body>
+  <!-- Birthday Text -->
   <div class="typing-container">
     <span>HAPPY</span>
     <span>BIRTHDAY</span>
     <span>SWEETIEE</span>
-    <span>😘</span>
-  </div>  <div class="typewriter">Knock and open the door to your
-Witchcraft World</div>  <a href="page3.html">
-    <div class="door"></div>
-  </a>  <img src="reemt.png.jpg" class="witch-image" alt="Witch">  <script>
-    const bulbColors = ['#ffff66', '#ffcc00', '#fffacd'];
-    for (let i = 0; i < 40; i++) {
-      const b = document.createElement('div');
-      b.className = 'bulb';
-      const size = 10 + Math.random() * 20;
-      b.style.width = `${size}px`;
-      b.style.height = `${size}px`;
-      b.style.top = `${Math.random() * 100}%`;
+    <span>😘😘😘</span>
+  </div>  <!-- Knock the Door Message -->  <div class="typewriter-message">
+    Knock and open the door to your
+    Witchcraft World
+  </div>  <!-- Door Section -->  <div class="door-section">
+    <a href="page3.html">
+      <div class="door"></div>
+    </a>
+  </div>  <!-- Witch Image -->  <img src="reemt.png.jpg" class="witch-image" alt="Witch">  <!-- Sparkling Bulbs -->  <script>
+    const numBulbs = 40;
+    for (let i = 0; i < numBulbs; i++) {
+      const b = document.createElement("div");
+      b.className = "bulb";
+      b.style.width = `${10 + Math.random() * 20}px`;
+      b.style.height = b.style.width;
       b.style.left = `${Math.random() * 100}%`;
-      b.style.backgroundColor = bulbColors[Math.floor(Math.random() * bulbColors.length)];
+      b.style.top = `${Math.random() * 100}%`;
+      b.style.animationDelay = `${Math.random() * 3}s`;
       document.body.appendChild(b);
     }
-    <img src="reemt.png.jpg" class="witch-image" alt="Witch">
 
-    const balloonColors = ['red', 'yellow', 'blue', 'green', 'purple'];
+    const balloonColors = ['red', 'blue', 'yellow', 'green', 'purple'];
     for (let i = 0; i < 20; i++) {
       const balloon = document.createElement('div');
       balloon.className = 'balloon';
       balloon.style.left = `${Math.random() * 100}%`;
-      balloon.style.width = '20px';
-      balloon.style.height = '30px';
-      balloon.style.backgroundColor = balloonColors[i % balloonColors.length];
-      balloon.style.animationDelay = `${Math.random() * 8}s`;
+      balloon.style.backgroundColor = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+      balloon.style.animationDelay = `${Math.random() * 9}s`;
       document.body.appendChild(balloon);
     }
   </script></body>
